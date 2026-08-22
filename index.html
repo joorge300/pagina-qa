@@ -1,76 +1,302 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jorge Fereira | QA Automatizador</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jorge Fereira | RPA Developer &amp; QA Automation</title>
+<meta name="description" content="RPA Developer y QA Automation Engineer en Santiago de Chile. +15 robots en producción con Playwright, TypeScript y Python. Migración desde UiPath, CI/CD en GitHub Actions, AWS Lambda y QA de IA Generativa. ISTQB CTFL.">
+<meta property="og:title" content="Jorge Fereira | RPA Developer &amp; QA Automation">
+<meta property="og:description" content="+15 robots en producción · Playwright · TypeScript · Python · AWS · CI/CD · QA de IA Generativa">
+<meta property="og:type" content="profile">
+<style>
+:root{
+  --bg:#0b1622; --card:#122437; --line:#1e3448;
+  --fg:#edf2f7; --muted:#94acc4; --dim:#6e8caa;
+  --accent:#2dd4bf; --accent-soft:rgba(45,212,191,.12);
+  --radius:14px; --maxw:960px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+header{
+  background:linear-gradient(135deg,#0b1622 0%,#12243a 55%,#16304a 100%);
+  border-bottom:1px solid var(--line); padding:72px 0 56px;
+}
+header h1{margin:0 0 6px; font-size:clamp(2rem,5vw,3rem); letter-spacing:-.02em}
+.role{color:var(--fg); font-size:clamp(1.05rem,2.4vw,1.35rem); font-weight:600; margin:0 0 14px}
+.role .sep{color:var(--accent)}
+.stack-line{color:var(--muted); font-size:1rem; margin:0 0 22px}
+.meta{color:var(--dim); font-size:.94rem; margin:0}
+.rule{width:88px; height:4px; background:var(--accent); border-radius:2px; margin:0 0 22px}
+
+.metrics{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px; margin:34px 0 0;
+}
+.metric{background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px}
+.metric b{display:block; font-size:1.6rem; color:var(--fg); line-height:1.2}
+.metric span{color:var(--muted); font-size:.9rem}
+
+section{padding:52px 0; border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:1.5rem; margin:0 0 6px; letter-spacing:-.01em}
+.sub{color:var(--dim); margin:0 0 26px; font-size:.95rem}
+
+.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:24px; margin-bottom:18px}
+.card h3{margin:0 0 4px; font-size:1.12rem}
+.card .where{color:var(--accent); font-weight:600; font-size:.95rem; margin:0 0 2px}
+.card .when{color:var(--dim); font-size:.88rem; margin:0 0 14px}
+.card ul{margin:0; padding-left:20px}
+.card li{margin-bottom:9px; color:#d7e2ee}
+.card li:last-child{margin-bottom:0}
+.card li strong{color:var(--fg)}
+
+.tech{margin-top:16px; padding-top:14px; border-top:1px dashed var(--line); color:var(--dim); font-size:.88rem}
+
+.tags{display:flex; flex-wrap:wrap; gap:9px; margin-top:14px}
+.tag{background:var(--accent-soft); color:var(--accent); border:1px solid rgba(45,212,191,.28);
+  border-radius:999px; padding:5px 13px; font-size:.85rem}
+.tag.plain{background:rgba(255,255,255,.04); color:var(--muted); border-color:var(--line)}
+
+.grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px}
+
+.skills h4{margin:0 0 8px; font-size:.82rem; letter-spacing:.09em; text-transform:uppercase; color:var(--dim)}
+.skills .block{margin-bottom:22px}
+.skills .block:last-child{margin-bottom:0}
+
+ul.plain{list-style:none; padding:0; margin:0}
+ul.plain li{padding:11px 0; border-bottom:1px solid var(--line); color:#d7e2ee}
+ul.plain li:last-child{border-bottom:0}
+ul.plain .em{color:var(--dim); font-size:.88rem; display:block}
+
+.cta{display:inline-block; background:var(--accent); color:#06231f; font-weight:700;
+  padding:12px 22px; border-radius:10px; margin-top:8px}
+.cta:hover{text-decoration:none; filter:brightness(1.08)}
+.cta.ghost{background:transparent; color:var(--fg); border:1px solid var(--line); font-weight:600}
+
+footer{padding:34px 0 46px; color:var(--dim); font-size:.88rem}
+
+@media (max-width:600px){
+  header{padding:52px 0 40px}
+  section{padding:40px 0}
+  .card{padding:20px}
+}
+</style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-  <header class="bg-white shadow-md p-6 text-center">
-    <h1 class="text-4xl font-bold">Jorge Fereira</h1>
-    <p class="text-lg text-blue-600">QA Automatizador Senior · +5 años de experiencia</p>
-  </header>
+<body>
 
-  <section class="p-6 max-w-4xl mx-auto">
-    <h2 class="text-2xl font-semibold mb-2">Sobre mí</h2>
-    <p class="text-gray-700 mb-4">
-      Soy un analista QA automatizador con más de 5 años de experiencia en automatización de pruebas, enfocado en calidad, eficiencia y mejora continua. Apasionado por la tecnología, la meditación y siempre aprendiendo nuevas herramientas para entregar valor real en los proyectos.
-    </p>
-  </section>
+<header>
+  <div class="wrap">
+    <h1>Jorge Fereira</h1>
+    <p class="role">RPA Developer <span class="sep">·</span> QA Automation Engineer</p>
+    <div class="rule"></div>
+    <p class="stack-line">Playwright · TypeScript · Python · AWS Lambda · GitHub Actions · QA de IA Generativa</p>
+    <p class="meta">Ingeniero en Informática · ISTQB CTFL · Santiago de Chile</p>
 
-  <section class="p-6 bg-white max-w-4xl mx-auto rounded-xl shadow">
-    <h2 class="text-2xl font-semibold mb-4">Experiencia Profesional</h2>
-    <ul class="list-disc list-inside space-y-2">
-      <li><strong>MoveApps Chile</strong> (Empresa consultora TI): proyectos en diversas industrias como retail, seguros y banca, entregando soluciones de QA desde cero.</li>
-      <li><strong>Integración de frameworks como Selenium, Cypress, Playwright</strong> con pipelines de CI/CD en Jenkins, GitLab y Azure DevOps.</li>
-      <li>Participación en diseños de estrategias de pruebas, gestión con Zephyr/Jira, y creación de documentación técnica.</li>
-    </ul>
-  </section>
-
-  <section class="p-6 max-w-4xl mx-auto">
-    <h2 class="text-2xl font-semibold mb-4">Habilidades Técnicas</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm">Selenium</span>
-      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm">Cypress</span>
-      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm">Playwright</span>
-      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm">Postman</span>
-      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm">Git</span>
-      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm">Jenkins</span>
-      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm">GitLab CI</span>
-      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm">Jira + Zephyr</span>
-      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm">HTML / CSS</span>
+    <div class="metrics">
+      <div class="metric"><b>+15</b><span>robots en producción</span></div>
+      <div class="metric"><b>14</b><span>workflows de CI/CD</span></div>
+      <div class="metric"><b>+10</b><span>años en tecnología</span></div>
+      <div class="metric"><b>4</b><span>industrias</span></div>
     </div>
-  </section>
+  </div>
+</header>
 
-  <section class="p-6 bg-white max-w-4xl mx-auto rounded-xl shadow mt-6">
-    <h2 class="text-2xl font-semibold mb-4">Certificaciones y Formación</h2>
-    <ul class="list-disc list-inside">
-      <li>Ingeniero en Informática</li>
-      <li>Certificación ISTQB (Fundamentos de Pruebas de Software)</li>
-      <li>Curso Selenium WebDriver + Java (Udemy)</li>
-      <li>Curso Cypress QA Automation (Platzi)</li>
-    </ul>
-  </section>
-
-  <section class="p-6 max-w-4xl mx-auto mt-6">
-    <h2 class="text-xl font-semibold mb-2">¿Por qué contratarme?</h2>
+<section id="perfil">
+  <div class="wrap">
+    <h2>Perfil</h2>
+    <p class="sub">Qué hago y para quién.</p>
     <p>
-      Soy resolutivo, responsable, con mirada crítica hacia los procesos de QA y siempre enfocado en entregar productos con calidad. Sé trabajar en equipo y también de forma autónoma. Me adapto rápido a nuevos entornos y herramientas, y siempre busco optimizar lo que ya existe.
+      Ingeniero en Informática con más de 10 años en tecnología, 7 de ellos en aseguramiento de calidad
+      y automatización de software. Hoy desarrollo <strong>RPA end-to-end</strong> y hago
+      <strong>QA de funcionalidades basadas en IA Generativa</strong>, sobre cuatro industrias:
+      medios de pago, previsional, retail y recursos humanos.
     </p>
-  </section>
-
-  <section class="p-6 bg-white max-w-4xl mx-auto rounded-xl shadow mt-6">
-    <h2 class="text-xl font-semibold mb-4">Contáctame</h2>
-    <p class="mb-4">Puedes escribirme directamente o descargar mi CV en PDF.</p>
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a href="mailto:jorgeluisfereirac@gmail.com" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-center">Enviar Email</a>
-      <a href="CV_Jorge_Fereira_QA_2025_actualizado.pdf" download class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 text-center">Descargar CV</a>
+    <p>
+      Trabajo el ciclo completo: relevamiento con el usuario (PDD), diseño, desarrollo, pruebas
+      unitarias / integración / regresión, despliegue y soporte en producción. Mi criterio de
+      «terminado» exige una corrida end-to-end contra el ambiente productivo real.
+    </p>
+    <div class="tags">
+      <span class="tag">RPA</span>
+      <span class="tag">QA Automation</span>
+      <span class="tag">QA de LLM / GenAI</span>
+      <span class="tag">CI/CD</span>
+      <span class="tag">Serverless</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="text-center text-sm text-gray-500 mt-10 p-4">
-    © 2025 Jorge Fereira. Hecho con café, código y amor al QA.
-  </footer>
+<section id="experiencia">
+  <div class="wrap">
+    <h2>Experiencia</h2>
+    <p class="sub">Lo que construí, con el detalle técnico.</p>
+
+    <div class="card">
+      <h3>RPA Developer</h3>
+      <p class="where">Randstad</p>
+      <p class="when">jul. 2025 – actualidad · Santiago de Chile · Remoto</p>
+      <ul>
+        <li>Desarrollo y mantengo <strong>+15 robots en producción</strong> sobre un framework corporativo
+            en TypeScript + Playwright con arquitectura hexagonal, orquestados con <strong>14 workflows de
+            GitHub Actions</strong> en runners self-hosted: ejecución programada, reintentos, cola
+            transaccional, logging estructurado (Winston) y reporte automático por correo.</li>
+        <li>Lideré la <strong>migración de procesos legacy de UiPath (.xaml) a Playwright + TypeScript</strong>,
+            reemplazando esperas fijas por esperas basadas en eventos y selectores legacy por
+            localizadores modernos.</li>
+        <li>Automaticé trámites en <strong>portales gubernamentales argentinos</strong> (AFIP/ARCA y ANSES:
+            Artículo 80 LCT, Certificaciones de Servicios, Altas y Bajas, ART) con procesos multiempresa
+            de 3 fases y estado persistido en Google Sheets.</li>
+        <li>Construí y desplegué un <strong>pipeline serverless en AWS Lambda</strong> (Python 3.12,
+            Serverless Framework, Layers, VPC, SonarQube): consulta SQL Server, deduplica candidatos,
+            carga en Google Sheets y notifica por SMTP.</li>
+        <li>Automaticé <strong>portales de empleo</strong> (Bumeran, Computrabajo/Pandapé): publicación de
+            avisos, descarga masiva de postulantes y <strong>login con MFA vía Gmail API</strong>.</li>
+        <li><strong>QA de IA Generativa:</strong> ejecuté 126 casos sobre un parser de CV basado en LLM y
+            detecté 24 defectos. Pruebas de API (JWT, x-api-key, límites de payload, códigos
+            400/401/403/500), pruebas en Android vía adb y validación en base de datos.</li>
+        <li><strong>QA de digitalización de facturas (IA + OCR):</strong> set de datos con +40 comprobantes
+            reales y 9 defectos reportados.</li>
+      </ul>
+      <p class="tech">TypeScript · Playwright · Python · SQL Server · AWS (Lambda, S3) · Google Workspace API · GitHub Actions · Jira · UiPath</p>
+    </div>
+
+    <div class="card">
+      <h3>QA Automation Engineer</h3>
+      <p class="where">Moveapps</p>
+      <p class="when">jul. 2022 – jul. 2025 · Santiago de Chile · Remoto</p>
+      <ul>
+        <li><strong>Klap (medios de pago):</strong> diseñé y ejecuté planes de prueba en Jira/Zephyr y
+            desarrollé pruebas automatizadas con Selenium WebDriver, Java, Cucumber (BDD) y Maven sobre
+            flujos de facturación, POS y web.</li>
+        <li>Validé <strong>procesos batch y event-driven en AWS</strong> ejecutando y verificando jobs de
+            AWS Glue, Step Functions y EventBridge, contrastando resultados directamente en base de datos.</li>
+        <li>Generé, verifiqué y modifiqué archivos de intercambio <strong>SFTP y XML</strong>, y gestioné
+            archivos en Amazon S3 como parte de la validación end-to-end.</li>
+        <li>Pruebas de servicios: consumo y validación de <strong>APIs REST y SOAP</strong> con Postman y
+            SoapUI, verificando contratos, códigos de respuesta y manejo de errores.</li>
+        <li><strong>AFP Uno:</strong> pruebas funcionales y automatizadas sobre app móvil de consulta y
+            descarga de información previsional. <strong>Movicare:</strong> portal de traslados críticos
+            con formularios de alta combinatoria, diseñados por partición de equivalencias y valores límite.</li>
+      </ul>
+      <p class="tech">Selenium WebDriver · Java · Cucumber · Maven · Cypress · Postman · SoapUI · Jira · Zephyr · SQL · DBeaver · AWS (Glue, Step Functions, EventBridge, S3) · Scrum</p>
+    </div>
+
+    <div class="card">
+      <h3>QA Analyst</h3>
+      <p class="where">Moveapps</p>
+      <p class="when">may. 2021 – jul. 2022 · Santiago de Chile</p>
+      <ul>
+        <li>Aseguramiento de calidad funcional en retail, automotriz, agroindustria y seguridad:
+            <strong>ABCDIN</strong> (flujo de compra y emisión de boletas en punto de venta),
+            <strong>Agrosuper</strong> (trazabilidad de visitas a granjas para control de bioseguridad),
+            <strong>Toyota App</strong> (seguros, geolocalización y agendamiento) y
+            <strong>Teobservo</strong> (portal de televigilancia en tiempo real).</li>
+        <li>Diseño de casos, ciclos de regresión, seguimiento de defectos hasta el cierre e informes de
+            calidad a cliente.</li>
+      </ul>
+      <p class="tech">Jira · SQL · DBeaver · Postman · Pruebas funcionales · Pruebas de regresión · Pruebas móviles</p>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap skills">
+    <h2>Stack</h2>
+    <p class="sub">Herramientas con las que trabajo de forma habitual.</p>
+
+    <div class="grid2">
+      <div>
+        <div class="block">
+          <h4>RPA y automatización</h4>
+          <div class="tags">
+            <span class="tag">Playwright</span><span class="tag">TypeScript</span>
+            <span class="tag">Python</span><span class="tag">Selenium WebDriver</span>
+            <span class="tag">Cypress</span><span class="tag">Cucumber (BDD)</span>
+            <span class="tag">Java</span><span class="tag">Maven</span>
+            <span class="tag plain">UiPath (migración)</span>
+          </div>
+        </div>
+        <div class="block">
+          <h4>Cloud y CI/CD</h4>
+          <div class="tags">
+            <span class="tag">AWS Lambda</span><span class="tag">Serverless Framework</span>
+            <span class="tag">Amazon S3</span><span class="tag">GitHub Actions</span>
+            <span class="tag">Git</span><span class="tag">Docker</span>
+            <span class="tag">SonarQube</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="block">
+          <h4>Datos e integraciones</h4>
+          <div class="tags">
+            <span class="tag">SQL Server</span><span class="tag">PostgreSQL</span>
+            <span class="tag">DBeaver</span><span class="tag">Google Workspace API</span>
+            <span class="tag">SFTP</span><span class="tag">XML</span>
+          </div>
+        </div>
+        <div class="block">
+          <h4>QA e IA</h4>
+          <div class="tags">
+            <span class="tag">Postman</span><span class="tag">SoapUI</span>
+            <span class="tag">Jira / Zephyr</span><span class="tag">Scrum</span>
+            <span class="tag">LLM testing</span><span class="tag">Prompt engineering</span>
+            <span class="tag">OCR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formacion">
+  <div class="wrap">
+    <h2>Formación y certificaciones</h2>
+    <p class="sub">Lo verificable.</p>
+    <ul class="plain">
+      <li><strong>Ingeniero en Informática</strong><span class="em">Universidad Rafael Belloso Chacín · 2009–2014</span></li>
+      <li><strong>ISTQB Certified Tester Foundation Level (CTFL)</strong><span class="em">International Software Testing Qualifications Board · 2018</span></li>
+      <li><strong>Selenium con Java y Cucumber</strong><span class="em">Udemy · 2024</span></li>
+      <li><strong>API Testing con Postman</strong><span class="em">Udemy · 2024</span></li>
+      <li><strong>Docker para desarrolladores</strong><span class="em">Udemy · 2024</span></li>
+      <li><strong>Cypress</strong><span class="em">Platzi · 2022</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="idiomas">
+  <div class="wrap">
+    <h2>Idiomas</h2>
+    <ul class="plain">
+      <li><strong>Español</strong><span class="em">Nativo. Entrevistas y trabajo diario.</span></li>
+      <li><strong>Inglés</strong><span class="em">Técnico de lectura: documentación, especificaciones y logs.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <h2>Contacto</h2>
+    <p class="sub">Abierto a oportunidades de RPA Developer, QA Automation Engineer y AI Quality Engineer.</p>
+    <p>
+      <a class="cta" href="mailto:joorge300@gmail.com">joorge300@gmail.com</a>
+      <a class="cta ghost" href="https://www.linkedin.com/in/jorgefereira-rpa/" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Jorge Fereira · Santiago de Chile</div>
+</footer>
+
 </body>
 </html>
